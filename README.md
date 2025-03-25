@@ -54,3 +54,26 @@ Libraries: librosa, pyspark, pymongo, sklearn
 Databases: MongoDB
 Machine Learning Techniques: Locality Sensitive Hashing (LSH), Euclidean Distance
 
+
+
+### How to Set Up and Run the Project
+
+Set Up the Python Environment
+#### Install the required dependencies using pip:
+pip install pyspark librosa pymongo scikit-learn
+
+#### Extract Audio Features:
+Run the feature_Extraction.py file to extract MFCCs, Spectral Centroid, and Zero-Crossing Rate from your audio dataset:
+This will process your audio files and store the extracted features in a MongoDB collection.
+
+#### Configure MongoDB:
+Make sure MongoDB is running locally or on a server. Modify any MongoDB connection parameters in features.py or model.py if needed.
+
+#### Train the Recommendation Model:
+Run the model.py script to train the recommendation system using Spark's Locality Sensitive Hashing (LSH):
+This will apply hashing on the extracted features and build a model to detect similar tracks.
+
+#### Evaluate the Model:
+python modeltest.py
+This script evaluates the model's performance by checking for track similarity.
+
